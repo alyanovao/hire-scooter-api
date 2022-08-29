@@ -1,0 +1,37 @@
+###
+GET http://localhost:8127/service-api/transports
+
+###
+POST http://localhost:8127/service-api/transport
+Content-Type: application/json
+
+{
+ "model": "Xiaomi",
+  "type": "Hide",
+  "status": "active",
+  "chargeLevel": 100
+}
+
+###
+DELETE http://localhost:8127/service-api/transport/2
+
+###
+GET http://localhost:8076/price-api/prices
+
+###
+GET localhost:8127/service-api/travels
+
+###
+POST localhost:8127/service-api/startTravel
+Content-Type: application/json
+
+{
+ "customerId": 3,
+ "transportId": 1
+}
+
+###
+GET localhost:8167/service-api/transactions
+
+###
+POST localhost:8167/actuator/shutdown

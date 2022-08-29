@@ -1,0 +1,31 @@
+###
+POST http://localhost:8080/service-api/transport
+Content-Type: application/json
+
+{
+ "model": "Xiaomi",
+  "type": "Large",
+  "status": "active",
+  "chargeLevel": 100
+}
+
+###
+POST localhost:8080/service-api/startTravel
+Content-Type: application/json
+
+{
+ "customerId": 1,
+ "transportId": 1
+}
+
+###
+POST localhost:8080/service-api/finishTravel/2
+
+{
+}
+
+###
+GET localhost:8080/service-api/travels
+
+###
+GET localhost:8080/service-api/transactions

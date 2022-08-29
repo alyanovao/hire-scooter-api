@@ -1,0 +1,247 @@
+{
+	"info": {
+		"_postman_id": "79e5f40d-f0db-4f81-a965-9066f45ba55a",
+		"name": "hire-scooter-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "hire-scooter-price",
+			"item": [
+				{
+					"name": "prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scooter-price-url}}/price-api/prices",
+							"host": [
+								"{{scooter-price-url}}"
+							],
+							"path": [
+								"price-api",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hire-scooter-service",
+			"item": [
+				{
+					"name": "transports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scooter-service-url}}/service-api/transports",
+							"host": [
+								"{{scooter-service-url}}"
+							],
+							"path": [
+								"service-api",
+								"transports"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add transport",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"model\": \"Xiaomi\",\r\n  \"type\": \"Hide\",\r\n  \"status\": \"active\",\r\n  \"chargeLevel\": 100\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scooter-service-url}}/service-api/transport",
+							"host": [
+								"{{scooter-service-url}}"
+							],
+							"path": [
+								"service-api",
+								"transport"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "delete transport",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{scooter-service-url}}/service-api/transport/4",
+							"host": [
+								"{{scooter-service-url}}"
+							],
+							"path": [
+								"service-api",
+								"transport",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "travels",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scooter-service-url}}/service-api/travels",
+							"host": [
+								"{{scooter-service-url}}"
+							],
+							"path": [
+								"service-api",
+								"travels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transactions",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{scooter-service-url}}/service-api/transactions",
+							"host": [
+								"{{scooter-service-url}}"
+							],
+							"path": [
+								"service-api",
+								"transactions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "startTravel",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "default"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n \"customerId\": 1,\r\n \"transportId\": 3\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{scooter-service-url}}/service-api/startTravel",
+							"host": [
+								"{{scooter-service-url}}"
+							],
+							"path": [
+								"service-api",
+								"startTravel"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "hire-scooter-gateway",
+			"item": [
+				{
+					"name": "prices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/price-api/prices",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"price-api",
+								"prices"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "transports",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8100/service-api/transports",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8100",
+							"path": [
+								"service-api",
+								"transports"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "scooter-service-url",
+			"value": "http://localhost:8080",
+			"type": "default"
+		},
+		{
+			"key": "scooter-price-url",
+			"value": "http://localhost:8081",
+			"type": "default"
+		}
+	]
+}
